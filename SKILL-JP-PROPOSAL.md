@@ -225,5 +225,5 @@ if [ "$REPO_HASH" != "$INSTALLED_HASH" ]; then echo "UPDATE_NEEDED"; fi
 ```
 ---
 📦 humanizer-jp に更新があります。反映するには：
-cp -r ~/Documents/GitHub/humanizer-jp ~/.claude/skills/ && git -C ~/Documents/GitHub/humanizer-jp rev-parse HEAD > ~/.claude/skills/humanizer-jp/.last-sync
+rsync -av --delete --exclude='.git' ~/Documents/GitHub/humanizer-jp/ ~/.claude/skills/humanizer-jp/ && git -C ~/Documents/GitHub/humanizer-jp rev-parse HEAD > ~/.claude/skills/humanizer-jp/.last-sync
 ```
